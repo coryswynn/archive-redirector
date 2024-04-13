@@ -5,8 +5,15 @@
   "description": "Automatically redirects specified news sites to their latest archive on archive.ph.",
   "permissions": [
     "activeTab",
-    "tabs"
+    "tabs",
+    "storage"
   ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -14,7 +21,9 @@
         "*://*.barrons.com/*",
         "*://*.fortune.com/*",
         "*://*.wsj.com/*",
-        "*://*.bloomberg.com/*"
+        "*://*.bloomberg.com/*",
+        "*://*.economist.com/*"
+        
       ],
       "js": ["redirect.js"],
       "run_at": "document_start"
@@ -23,6 +32,6 @@
       "matches": ["*://archive.ph/*"],
       "js": ["archive-modify.js"],
       "run_at": "document_end"
-  }
+    }
   ]
 }
