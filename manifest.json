@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Redirect to Archive",
+  "version": "1.0",
+  "description": "Automatically redirects specified news sites to their latest archive on archive.ph.",
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.nytimes.com/*",
+        "*://*.barrons.com/*",
+        "*://*.fortune.com/*",
+        "*://*.wsj.com/*",
+        "*://*.bloomberg.com/*"
+      ],
+      "js": ["redirect.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://archive.ph/*"],
+      "js": ["archive-modify.js"],
+      "run_at": "document_end"
+  }
+  ]
+}
