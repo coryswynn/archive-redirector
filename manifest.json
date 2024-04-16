@@ -17,19 +17,27 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.nytimes.com/*",
-        "*://*.barrons.com/*",
-        "*://*.fortune.com/*",
-        "*://*.wsj.com/*",
         "*://*.bloomberg.com/*",
-        "*://*.economist.com/*"
-        
+        "*://*.economist.com/*",
+        "*://*.forbes.com/*",
+        "*://*.fortune.com/*",
+        "*://*.foreignpolicy.com/*",
+        "*://*.latimes.com/*",
+        "*://*.nytimes.com/*",
+        "*://*.washingtonpost.com/*",
+        "*://*.wsj.com/*",
+        "*://*.theathletic.com/*",
+        "<all_urls>"
       ],
       "js": ["redirect.js"],
       "run_at": "document_start"
     },
     {
-      "matches": ["*://archive.ph/*"],
+			"matches": [
+				"https://archive.ph/http*",
+				"https://archive.ph/?url=*",
+        "https://archive.ph/*"
+			],
       "js": ["archive-modify.js"],
       "run_at": "document_end"
     }
