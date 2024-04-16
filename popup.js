@@ -1,5 +1,15 @@
-const sites = ["nytimes.com", "barrons.com", "fortune.com", "wsj.com", "bloomberg.com", "economist.com"];
-
+const sites = [
+    "bloomberg.com",
+    "economist.com",
+    "forbes.com",
+    "fortune.com",
+    "foreignpolicy.com",
+    "latimes.com",
+    "nytimes.com",
+    "theathletic.com",
+    "washingtonpost.com",
+    "wsj.com"
+];
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('siteToggles');
     sites.forEach(site => {
